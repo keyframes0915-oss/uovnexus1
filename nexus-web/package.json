@@ -1,0 +1,7 @@
+{
+  "name": "uov-nexus-career-fair-2026",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "start": "vite", "build": "vite" },
+  "devDependencies": { "vite": "^7.1.7" }
+}
