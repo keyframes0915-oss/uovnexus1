@@ -310,6 +310,27 @@ footer .brand-image img { filter: none; }
 }
 .hero-footer i { height: 1px; background: #78b6ef55; flex: 1; }
 
+/* Landing-page partner orbit */
+.hero-partner-orbit {
+  position: absolute; z-index: 1; right: 9vw; top: 50%; width: 390px; height: 390px;
+  transform: translateY(-48%); border-radius: 50%;
+  border: 1px solid rgba(155,211,255,.20); box-shadow: inset 0 0 70px rgba(82,169,255,.09), 0 24px 70px rgba(0,9,44,.20);
+}
+.hero-partner-orbit::before, .hero-partner-orbit::after { content: ''; position: absolute; border: 1px solid rgba(155,211,255,.12); border-radius: 50%; }
+.hero-partner-orbit::before { inset: 42px; }
+.hero-partner-orbit::after { inset: 93px; }
+.hero-partner-orbit > p { position: absolute; top: 45px; left: 50%; margin: 0; transform: translateX(-50%); text-align: center; font: 700 9px/1.55 'DM Mono'; letter-spacing: 2px; color: #9ed4ff; }
+.partner-orbit-ring { position: absolute; inset: 0; animation: partner-orbit 22s linear infinite; }
+.partner-orbit-logo { position: absolute; width: 96px; height: 66px; display: grid; place-items: center; padding: 10px; border: 1px solid rgba(255,255,255,.48); border-radius: 14px; background: rgba(255,255,255,.93); box-shadow: 0 14px 28px rgba(0,10,55,.27); animation: partner-orbit-counter 22s linear infinite; }
+.partner-orbit-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.logo-a { left: 50%; top: -25px; transform: translateX(-50%); }
+.logo-b { right: -25px; top: 50%; transform: translateY(-50%); }
+.logo-c { left: 50%; bottom: -25px; transform: translateX(-50%); }
+.logo-d { left: -25px; top: 50%; transform: translateY(-50%); }
+.orbit-center { position: absolute; left: 50%; top: 50%; display: grid; place-items: center; width: 100px; height: 100px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle at 30% 30%, #5db6ff, #0c3e9d 62%, #061944); box-shadow: 0 0 0 12px rgba(91,182,255,.09), 0 12px 34px rgba(0,8,48,.35); color: #fff; text-align: center; font: 800 15px/1 'Manrope'; letter-spacing: -1px; }
+@keyframes partner-orbit { to { transform: rotate(360deg); } }
+@keyframes partner-orbit-counter { to { rotate: -360deg; } }
+
 /* ── SECTION BASE ────────────────────────────────────────────── */
 .section { padding: 120px 8vw; position: relative; }
 
@@ -458,7 +479,7 @@ footer .brand-image img { filter: none; }
   color: #9ed4ff;
 }
 .activity-caption p { display: none; }
-.activity-caption::after { content: 'Swipe through the UoV Nexus experience.'; display: block; margin-top: 14px; color: #d2e7ff; font-size: clamp(20px, 2.1vw, 28px); font-weight: 700; line-height: 1.2; letter-spacing: -.8px; }
+.activity-caption::after { content: 'Meet the people who can shape your future.'; display: block; margin-top: 14px; color: #d2e7ff; font-size: clamp(20px, 2.1vw, 28px); font-weight: 700; line-height: 1.2; letter-spacing: -.8px; }
 .activity-caption-note { display: none; }
 .activity-phone-stage { display: grid; place-items: center; min-height: 570px; perspective: 1100px; }
 .activity-phone {
@@ -1052,6 +1073,12 @@ footer a:last-child:hover { color: #0a3ab5; }
 /* ── 1200px ─────────────────────────────────────────────────── */
 @media (max-width: 1200px) {
   .company-logo-img { width: 170px; height: 92px; }
+  .hero-partner-orbit { width: 300px; height: 300px; right: 5vw; }
+  .hero-partner-orbit::before { inset: 32px; }
+  .hero-partner-orbit::after { inset: 72px; }
+  .hero-partner-orbit > p { top: 33px; font-size: 8px; }
+  .partner-orbit-logo { width: 76px; height: 54px; padding: 7px; }
+  .orbit-center { width: 82px; height: 82px; font-size: 12px; }
 }
 
 /* ── 1024px ───────────────────────────────────────────────────── */
@@ -1081,6 +1108,7 @@ footer a:last-child:hover { color: #0a3ab5; }
   .site-header nav.open { display: flex; }
 
   .hero { padding: 0; min-height: 145svh; }
+  .hero-partner-orbit { display: none; }
   .hero-scroll-stage { padding: 140px 5vw 56px; }
   .hero-logo-canvas img { width: min(82vw, 460px); max-height: 38svh; }
   .hero-orbits { right: 5vw; bottom: 72px; gap: 14px; }
